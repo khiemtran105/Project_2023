@@ -22,51 +22,51 @@
 
         <div class="container">
 
-    <div class="row clearfix">
-    <?php 
-                     foreach ($search_list as $key =>$result){
+        <div class="row clearfix">
+        <?php 
+                     foreach ($search_list as $key =>$product){
      
-               ?>   
-        <div class="col-lg-3 col-md-4 col-sm-12">
-        <form action="<?php echo BASE_URL ?>/cart/addtocart" method="POST" >
-        <input type="hidden" name="id_product" value="<?php echo $result['product_id'] ?>" >
-                    <input type="hidden" name="title_product" value="<?php echo $result['product_title'] ?>" >
-                    <input type="hidden" name="image_product" value="<?php echo $result['product_image'] ?>">
-                    <input type="hidden" name="price_product" value="<?php echo $result['product_price'] ?>">
-                    <input type="hidden" name="quanlity_product" value="1">
-            <div class="card product_item">
-           
-                <div class="body">
-                    <div class="cp_img">
-                        <img  class="mb-1 mx-3" width="180" height="200"  src="<?php echo BASE_URL ?>/public/upload/product/<?php echo $result['product_image'] ?>" alt="Product" class="img-fluid">
-                        <div class="hover">
-                        <a href="javascript:void(0);" class=" btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i>
-                        <input type="submit" class=" btn-primary"  class="bg-danger"  name="addcart" value="Đặt hàng">
-                        </a>
-                        <a href="javascript:void(0);" class=" btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
-                    </div>
-                        
+               ?>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+          
+                        <input type="hidden" name="quanlity_product" value="1"> 
+                <div class="card product_item">
+               
+                    <div class="body">
+                   <div class="cp_img">
+                        <?php if($product['status']==0){
+                              echo '<span class="btn-info  btn-sm">Stopped Selling</span>';
+                            ?>
+                            <img  class="mb-1 mx-3" width="180" height="200"  src="<?php echo BASE_URL ?>/public/upload/product/<?php echo $product['product_image'] ?>" alt="Product" class="img-fluid">
+                        <?php 
+                               }else { ?>
+                            <img  class="mb-1 mx-3" width="180" height="200"  src="<?php echo BASE_URL ?>/public/upload/product/<?php echo $product['product_image'] ?>" alt="Product" class="img-fluid">
+                            <div class="hover">
+                            <a href="javascript:void(0);"  class="  btn-primary waves-effect ">
+                            <a  class=" btn-primary btn-sm waves-effect" href="<?php echo BASE_URL ?>/sanpham/chitietsanpham/<?php echo $product['product_id'] ?>" ><span  class="icon-shopping-cart"></span> Details</a>
+                            </a>
+                             </div>
+                           
+                           <?php } ?> 
+                        </div>
+                        <div class="product_details">
+                            <h4><?php echo $product ['product_title']?></h4>
+                            <ul class="product_price list-unstyled">
+                                <!-- <li class="old_price">$16.00</li> -->
+                                <li style="font-size: 19px; " class="new_price text-danger"><?php echo number_format($product ['product_price'],0,',','.'). ' VNĐ' ?></li>
+                            </ul>
+                            <div>
+                            </div>
+                        </div>
+                          
                     </div>
                     
-                    <div class="product_details">
-                        <h5><a href="ec-product-detail.html"><?php echo $result['product_title']?></a></h5>
-                        <ul class="product_price list-unstyled">
-                            <!-- <li class="old_price">$16.00</li> -->
-                            <li class="new_price"><?php echo number_format($result['product_price'],0,',','.'). 'VND' ?></li>
-                        </ul>
-                        <div>
-                            <a href="<?php echo BASE_URL ?>/sanpham/chitietsanpham/<?php echo $result['product_id'] ?>" >xem chi tiết</a>
-                        </div>
-                    </div>
-                  
                 </div>
+            <!-- </form> -->
             </div>
-            </form>
+                    <?php
+                     }
+                     ?>
         </div>
-
-                <?php
-                 }
-                 ?>
+       
     </div>
-   
-</div>

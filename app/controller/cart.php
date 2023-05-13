@@ -26,7 +26,8 @@
        
         public function cart(){
          
-            Session::chesksession_customer();
+            Session::init();
+
             $table_product_details='product_details';
             $categorymodel = $this->load->model('categorymodel');
             $table_product = "tbl_product";
@@ -101,6 +102,7 @@
         }
        
         public function updatecart(){
+            
             Session::init(); 
            
             $table_product = "tbl_product";
@@ -151,7 +153,7 @@
                         }
                         if($value['size_product'] == $key  && $value['size_product'] ==$s && $qty == 0 ){
                             unset($_SESSION["addtocart"][$section]);
-                            $message['msg']="Xóa vỏ hàng thành công trống!!";
+                            $message['msg']="Delete row successfully !!";
                         }
                         if($_SESSION["addtocart"]==null){
                             unset($_SESSION["addtocart"]);

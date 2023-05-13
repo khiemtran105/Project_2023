@@ -104,10 +104,10 @@
            
             if($result==1){
                 $orderstatistic->insert_statistics($table_statistic,$data_statistics);
-                $message['msg']="Đã xử lí đơn hàng thành công!!";
+                $message['msg']="Order processed successfully!!";
                 header('Location:'.BASE_URL."/order?msg=".urlencode(serialize($message)));
               }else{
-                $message['msg']="Đã xử lí đơn hàng thất bại!!";
+                $message['msg']="Order processing failed!!";
                 header('Location:'.BASE_URL."/order?msg=".urlencode(serialize($message)));
             }
                $mail= new mailer();
@@ -385,10 +385,10 @@
               $ordermodel = $this->load->model('ordermodel');
               $result= $ordermodel->deleteorder($table_order,$cond);
               if($result==1){
-                $message['msg']="Xoá đơn hàng thành công!!";
+                $message['msg']="Delete order successfully!!";
                 header('Location:'.BASE_URL."/order?msg=".urlencode(serialize($message)));
               }else{
-                $message['msg']="Xóa đơn hàng thất bại!!";
+                $message['msg']="Delete failed orders!!";
                 header('Location:'.BASE_URL."/order?msg=".urlencode(serialize($message)));
             }
         }
@@ -527,10 +527,10 @@
                   $categorymodel->updatetproduct($product_details,$data1,$cond_product);
                 
             }
-            $message['msg']="Cập nhật thành công!!";
+            $message['msg']="Update successful!!";
             header('Location:'.BASE_URL."/product/inventory_management?msg=".urlencode(serialize($message)));
           }else{
-            $message['msg']="Cập nhật đơn thành công  thất bại!!";
+            $message['msg']="Update menu success failed!!";
             header('Location:'.BASE_URL."/product/inventory_management?msg=".urlencode(serialize($message)));
         }
     }

@@ -58,7 +58,7 @@
           $customermodel = $this->load->model('customermodel');
           $result =  $customermodel->customer_delete($table_customers,$cond);
           if($result==1){
-            $message['msg']="Xóa tài khoản thành công!!";
+            $message['msg']="Delete account successfully!!";
             header('Location:'.BASE_URL."/customer/customer_list?msg=".urlencode(serialize($message)));
           }else{
             $message['msg']="Xóa tài khoản thất bại!!";
@@ -85,10 +85,10 @@
            );
             $result =  $customermodel->upload_role($table_customers,$data,$cond);
             if($result==1){
-              $message['msg']="Cập nhật tài khoản thành công!!";
+              $message['msg']="Update successfully!!";
               header('Location:'.BASE_URL."/customer/customer_list?msg=".urlencode(serialize($message)));
             }else{
-              $message['msg']="Cập nhật tài khoản thất bại!!";
+              $message['msg']="Update failed!!";
               header('Location:'.BASE_URL."/customer/customer_list?msg=".urlencode(serialize($message)));
           }
          }
@@ -275,7 +275,7 @@
          public function logout(){
             Session::init();
             Session::destroy();
-            $message['msg']="Đăng xuât thành công!!";
+            $message['msg']="Logout successfully!!";
             header('Location:'.BASE_URL."/customer/customer_signin?msg=".urlencode(serialize($message)));
            
          }

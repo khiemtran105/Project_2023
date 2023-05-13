@@ -222,7 +222,7 @@
       $categorymodel =$this->load->model('categorymodel');
       $result= $categorymodel->updatetproduct($table,$data,$cond);
       if($result==1){
-        $message['msg']="Tắt sản phẩm thành công!!";
+        $message['msg']="Turn off successfully!!";
         header('Location:'.BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
       }else{
         $message['msg']="Tắt sản phẩm thất bại!!";
@@ -238,7 +238,7 @@
       $categorymodel =$this->load->model('categorymodel');
       $result= $categorymodel->updatetproduct($table,$data,$cond);
       if($result==1){
-        $message['msg']="Mở sản phẩm thành công!!";
+        $message['msg']="Turn on successfully !!";
         header('Location:'.BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
       }else{
         $message['msg']="Mở sản phẩm thất bại!!";
@@ -252,7 +252,7 @@
       $categorymodel =$this->load->model('categorymodel');
       $result= $categorymodel->deleteproduct($table,$cond);
       if($result==1){
-        $message['msg']="Xóa sản phẩm thành công!!";
+        $message['msg']="Delete product successfully!!";
         header('Location:'.BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
       }else{
         $message['msg']="Xóa sản phẩm thất bại!!";
@@ -266,7 +266,7 @@
       $categorymodel =$this->load->model('categorymodel');
       $result= $categorymodel->deleteproduct($table,$cond);
       if($result==1){
-        $message['msg']="Xóa sản phẩm thành công!!";
+        $message['msg']="Delete product successfully!!";
         header('Location:'.BASE_URL."/product/inventory_management?msg=".urlencode(serialize($message)));
       }else{
         $message['msg']="Xóa sản phẩm thất bại!!";
@@ -327,7 +327,7 @@
    $result = $categorymodel->updatetproduct($table,$data,$cond);
    if($result==1){
   
-     $message['msg']="Cập nhật phẩm thành công!!";
+     $message['msg']="Update successfully!!";
      header('Location:'.BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
    }else{
      $message['msg']="Cập nhật phẩm thất bại!!";
@@ -349,7 +349,7 @@
        $categorymodel =$this->load->model('categorymodel');
        $result = $categorymodel->insertcategory($table,$data);
        if($result==1){
-         $message['msg']="Thêm danh mục sản phẩm thành công!!";
+         $message['msg']="Add product successfully!!";
          header('Location:'.BASE_URL."/product/list_category?msg=".urlencode(serialize($message)));
        }else{
          $message['msg']="Thêm danh mục sản phẩm thất bại!!";
@@ -399,7 +399,7 @@
             $categorymodel =$this->load->model('categorymodel');
             $result= $categorymodel->categorydelete($table,$cond);
             if($result==1){
-              $message['msg']="Xoá danh mục sản phẩm thành công!!";
+              $message['msg']="Delete category successfully!!";
               header('Location:'.BASE_URL."/product/list_category?msg=".urlencode(serialize($message)));
             }else{
               $message['msg']="Xóa danh mục sản phẩm thất bại!!";
@@ -447,7 +447,7 @@
           $categorymodel =$this->load->model('categorymodel');
           $result= $categorymodel->updatecategory($table,$data,$cond);
           if($result==1){
-            $message['msg']="Cập nhật sản phẩm thành công!!";
+            $message['msg']="Update categoty successfully!!";
             header('Location:'.BASE_URL."/product/list_category?msg=".urlencode(serialize($message)));
           }else{
             $message['msg']="Cập nhật phẩm thất bại!!";
